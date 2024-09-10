@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecfb78ea41ef4ff459bf8d53d6ee26f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 1
+  minDistance: 1.5
   walkZone: {fileID: 328278896}
 --- !u!195 &1137886830
 NavMeshAgent:
