@@ -5,10 +5,11 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NavMeshTest : MonoBehaviour
+public class AIMovement : MonoBehaviour
 {
     [SerializeField] float minDistance = 1;
     [SerializeField] Collider walkZone;
+    public bool moveneed = true;
     private Vector3 target;
     private Animator animator;
 
@@ -28,6 +29,9 @@ public class NavMeshTest : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!moveneed) return;
+
+
         if (agent.velocity.magnitude < 0.3)
         {
             animator.SetBool("walk", false);
@@ -63,6 +67,10 @@ public class NavMeshTest : MonoBehaviour
             NextPoint();
         }
     }
-
+    public void ICanStop(bool canistoppls)
+    {
+        agent.isStopped = canistoppls;
+        animator.SetBool("walk", !canistoppls);
+    }
 
 }
